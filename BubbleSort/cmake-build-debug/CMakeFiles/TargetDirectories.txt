@@ -1,0 +1,3 @@
+/Users/zfz/ClionProjects/Sort/BubbleSort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/zfz/ClionProjects/Sort/BubbleSort/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zfz/ClionProjects/Sort/BubbleSort/cmake-build-debug/CMakeFiles/BubbleSort.dir
