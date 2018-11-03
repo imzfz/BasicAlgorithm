@@ -1,3 +1,7 @@
+/**
+ * 冒泡排序
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -17,31 +21,35 @@ void sort(int *p, int n) {
                 flag = 1;
             }
         }
+        //如果没有交换过，则说明已经有序
         if(!flag) break;
     }
 }
 
-void print(int *p, int n){
+void output(int *p, int n){
     printf("%s", "result is ");
     for(int i = 0; i < n; ++i){
         printf("%d ", p[i]);
     }
 }
 
-int main() {
-//    int p[10] = {1, 65, 34, 76, 23, 5, 75, 9, 34, 3};
-    int p[100000];
+void timeTested(int *p){
     time_t t_start, t_end;
-
-    srand((unsigned int) time(NULL));
-    for(int i = 0; i < N; ++i){
-        p[i] = rand() % 9999;
-    }
     t_start = time(NULL);
     sort(p, N);
     t_end	= time(NULL);
-    print(p, N);
-    printf("\n");
     printf("sort time is %f\n", difftime(t_end, t_start));
+}
+
+int main() {
+    int p[N];
+
+    srand((unsigned int) time(NULL));
+    for(int i = 0; i < N; ++i){
+        p[i] = rand() % (N-1);
+    }
+    timeTested(p);
+    output(p, N);
+    printf("\n");
     return 0;
 }
