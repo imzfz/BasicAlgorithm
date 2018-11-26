@@ -2,7 +2,10 @@
  * 快速排序
  */
 #include <stdio.h>
-#define N 10
+#include <time.h>
+#include <stdlib.h>
+
+#define N 100000
 
 /**
  * 分区函数
@@ -58,10 +61,26 @@ void output(int *p, int n){
     }
 }
 
+void timeTested(int *p){
+    time_t t_start, t_end;
+    t_start = time(NULL);
+    sort(p, N);
+    t_end	= time(NULL);
+    printf("sort time is %f\n", difftime(t_end, t_start));
+}
+
 int main() {
 //    int p[N] = {11, 75, 23, 57, 1, 4, 3, 24, 75, 44};
-    int p[N] = {11, 8, 3, 9, 7, 1, 2, 5, 5, 4};
-    sort(p, N);
+//    int p[N] = {11, 8, 3, 9, 7, 1, 2, 5, 5, 4};
+    int p[N];
+
+    srand((unsigned int) time(NULL));
+    for(int i = 0; i < N; ++i){
+        p[i] = rand() % (N-1);  //随机生成数字
+//        p[i] = i;             //加入数组有序，那么每次使用最后一个位置作为哨兵则需要n^2时间
+    }
+
+    timeTested(p);
     output(p, N);
     return 0;
 }
