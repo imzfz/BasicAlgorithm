@@ -1,1 +1,1 @@
-# Basic sort
+# Basic algorithm
